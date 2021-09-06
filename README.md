@@ -8,3 +8,5 @@ Men ni får i alla fall Del A och B.
 Har inte hunnit kommentera allt lika noggrant som Uppgift 1 men är det något ni undrar över så
 Kan jag förklara koden.</p>
 
+# Uppgiften är kompletterad med lösning för Del C
+
