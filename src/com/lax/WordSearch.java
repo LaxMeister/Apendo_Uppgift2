@@ -36,8 +36,7 @@ public class WordSearch {
         }
 
         while ((stringForBufferReader = br.readLine()) != null) {
-            String st2 = stringForBufferReader.replaceAll("\\p{Punct}", "");
-            stringForRemovedPeriods = st2;
+            stringForRemovedPeriods = stringForBufferReader.replaceAll("\\p{Punct}", "");
             search(stringForRemovedPeriods, inputWord);
             if(!caseSensitive){
                 search(stringForRemovedPeriods,ifCasesensitive);
@@ -47,7 +46,7 @@ public class WordSearch {
 
         if (count != 0)
         {
-            String sucessResult = "The given word( " + inputWord + " ) is present for " + count + " times in the file";
+            String sucessResult = "The given word ( " + inputWord + " ) is present for " + count + " times in the file";
             return sucessResult;
         } else {
            String noResult ="The given word (" + inputWord + ") is not present in the file";

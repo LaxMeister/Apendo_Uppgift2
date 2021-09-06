@@ -14,7 +14,7 @@ public class SentenceSearch {
      Funktionen fungerar som så att den läser in filen och sedan delar upp den vid varje skiljetecken.
      Jag har i det här fallet valt att bara ha punkt som argument vid uppdelningen då det är bara punkter i denna text.
      Uppdelningen ligger i en loop som har en variabel som räknar varje var varv i loopen.
-     Den variabeln har vi för att ta reda på total antalet meningar det finns i hela texten
+     Den variabeln har vi för att ta reda på total antalet meningar det finns i hela texten,
      som används sen vid uträkning av hur många meningar sökordet inte förekommer i.
      Sedan kollar vi om sökordet som vi har som argument för funktionen finns i någon
      av meningarna och om den gör det så lägger vi den meningen i en arraylista.
@@ -68,7 +68,7 @@ public class SentenceSearch {
                 paragraphList.add(paraString);
             }
         }
-        Set<String> s = new LinkedHashSet<String>(paragraphList);
-        return s.size();
+        Set<String> noDuplicatesOfParaSets = new LinkedHashSet<String>(paragraphList);
+        return noDuplicatesOfParaSets.size();
     }
 }

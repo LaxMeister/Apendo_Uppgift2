@@ -29,6 +29,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         /** Deklaration av variabler **/
         String inputWord;
+        int inputInt;
         String userInput;
         String choiceCaseSensitive = "";
         boolean choiceMade = false;
@@ -79,7 +80,11 @@ public class Main {
             }
 
             if (userInput.equals("3")) {
-                modifyFile.Modify();
+                System.out.println("Type the word you want to search for");
+                inputWord = input.next();
+                System.out.println("After how many words should the modification appear");
+                inputInt = input.nextInt();
+                modifyFile.Modify(inputWord,inputInt);
                 choiceMade = true;
             }
         }
