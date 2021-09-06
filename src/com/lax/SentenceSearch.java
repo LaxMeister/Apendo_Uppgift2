@@ -10,7 +10,7 @@ public class SentenceSearch {
     }
     public static int totalParagrahs;
 
-    public String FindStenences(String inputWord) throws IOException {
+    public String FindSentences(String inputWord) throws IOException {
         String st;
         String[] stTest;
         int count = 0;
@@ -39,6 +39,7 @@ public class SentenceSearch {
         return result;
     }
 
+    /** Funktion som räknar ut hur många stycken ordet förekommer i**/
     public static int getParaCount(String input) throws IOException {
         List<String> l = new ArrayList<String>();
         File file = new File("textfil_apendo.text");

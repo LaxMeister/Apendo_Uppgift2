@@ -1,13 +1,7 @@
 package com.lax;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Main {
   /*
@@ -74,14 +68,12 @@ public class Main {
             if (userInput.equals("2")) {
                 System.out.println("Type the word you want to search for");
                 inputWord = input.next();
-                System.out.println(sentenceSearch.FindStenences(inputWord));
+                System.out.println(sentenceSearch.FindSentences(inputWord));
                 choiceMade = true;
             }
 
             if (userInput.equals("3")) {
-                System.out.println("Type the word you want to search for");
-                inputWord = input.next();
-                modifyFile.Modify(inputWord);
+                modifyFile.Modify();
                 choiceMade = true;
             }
         }
