@@ -15,7 +15,12 @@ public class Main {
         |_|   |_|    |___/
 */
     /**
+     *Programmet fungerar som så att du läser in en textfil och sedan får du göra 3 val.
+     * Val 1: söka efter hur många gånger ett ord förekommer i textfilen.
+     * val 2: söka efter hur många meningar och stycken ett ord förekommer i textfilen.
+     * val 3: Modifiera texten i textfilen och sedan spara till ny fil.
      *
+     * Val 3 är under konstruktion.
      **/
 
     public static int count;
@@ -46,6 +51,7 @@ public class Main {
         while (!choiceMade) {
             System.out.println("What do you want to do?\n1.Search for a word\n2.Search for a word in a sentence\n3.Modify and create a new file");
             userInput = input.next();
+
             if (userInput.equals("1")) {
                 System.out.println("Type the word you want to search for");
                 inputWord = input.next();

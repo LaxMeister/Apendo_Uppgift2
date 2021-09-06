@@ -12,30 +12,40 @@ public class WordSearch {
     public WordSearch() {
     }
 
+    /**Funktion som hittar förekomsten av ett sökord i en text.
+     * Funktionen fungerar som så att den tar in ett sökord och en bool
+     * som bestämmer om du vill ha det skiftlägeskänsligt.
+     * Först läser den in textfilen som du vill söka i sedan kollar den vad du
+     * har svarat i bool true eller false.
+     * Har du svarat true så går den vidare till en loop och tar bort alla skiljetecken i texten.
+     * Efter att skiljetecken är borta så skickas texten och sökordet
+     * till en funktion som söker igenom texten baserat på mönster, där sökordet är mönstret.
+     * Tillbaka från den funktionen får du antal gånger ordet förekommer i texten och det
+     * resultatet presenteras sedan.
+     * **/
     public String FindWord(String inputWord, boolean caseSensitive) throws IOException {
-
         File file = new File("textfil_apendo.text");
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(new FileReader(file));
-        String st;
-        String stTest;
+        String stringForBufferReader;
+        String stringForRemovedPeriods;
         String ifCasesensitive = inputWord;
 
         if (!caseSensitive) {
             ifCasesensitive = ifCasesensitive.substring(0, 1).toUpperCase() + ifCasesensitive.substring(1);
         }
 
-        while ((st = br.readLine()) != null) {
-            String st2 = st.replaceAll("\\p{Punct}", "");
-            stTest = st2;
-            search(stTest, inputWord);
+        while ((stringForBufferReader = br.readLine()) != null) {
+            String st2 = stringForBufferReader.replaceAll("\\p{Punct}", "");
+            stringForRemovedPeriods = st2;
+            search(stringForRemovedPeriods, inputWord);
             if(!caseSensitive){
-                search(stTest,ifCasesensitive);
+                search(stringForRemovedPeriods,ifCasesensitive);
             }
         }
         fr.close();
 
-        if (count != 0)  //Check for count not equal to zero
+        if (count != 0)
         {
             String sucessResult = "The given word( " + inputWord + " ) is present for " + count + " times in the file";
             return sucessResult;
@@ -46,6 +56,10 @@ public class WordSearch {
 
     }
 
+    /** Funktion som söker på mönster.
+     * Den tar in en text och ett ord och sedan kollar den efter ordet i texten.
+     * Den använder ordet som mönster att söka i texten.
+     **/
     public static void search(String txt, String pat) {
         int M = pat.length();
         int N = txt.length();
